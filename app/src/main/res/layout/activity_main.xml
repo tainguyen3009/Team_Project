@@ -6,7 +6,7 @@
     android:paddingHorizontal="18dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity">
+    tools:context="algonquin.cst2335.Dictionary.team_project.ui.main.MainActivity">
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
