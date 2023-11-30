@@ -1,82 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingHorizontal="18dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#5c6bc0"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Dictionary" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#5c6bc0"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.SearchView
-                android:id="@+id/search_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="#33F8F6F6"
-                android:clickable="true"
-                android:focusable="true"
-                app:queryHint="Type Word..."
-                app:searchIcon="@drawable/ic_search"
-                app:theme="@style/SearchTextViewTheme"
-
-                />
-
-
-        </LinearLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
+        android:fontFamily="@font/rozha_one_regular"
+        android:textColor="@color/primaryColor"
+        android:textSize="56sp"
+        android:text="@string/dictionary"
+        />
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sv_searchbar"
+        android:theme="@style/BlackCursorSearchView"
+        android:layout_width="match_parent"
+        app:iconifiedByDefault="false"
+        app:queryHint="Search here"
+        app:defaultQueryHint="Search here"
+        android:focusableInTouchMode="true"
+        android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/empty_history"
-            android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:textColor="@color/primaryColor"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="150dp"
-            android:visibility="visible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Words you searched most\nrecently show up here..."
-                android:textAlignment="center"
-                android:textColor="#5c6bc0"
-                android:textSize="22sp"
-                />
-        </RelativeLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view_history"
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical" />
-
+            android:fontFamily="@font/rozha_one_regular"
+            android:textSize="32sp"
+            android:text="@string/favourites"
+            />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:backgroundTint="@color/white"
+            android:textColor="@color/primaryColor"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/primaryColor"
+            app:strokeWidth="0.4dp"
+            android:text="@string/remove"
+            />
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-</android.support.design.widget.CoordinatorLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favourites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_test" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="8dp"
+            android:text="@string/test" />
+
+    </RelativeLayout>
+</LinearLayout>

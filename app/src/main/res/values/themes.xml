@@ -1,32 +1,38 @@
-<resources>
-
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.DictionaryApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryColorVariant</item>
+        <item name="colorOnPrimary">@color/secondaryColor</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryColorVariant</item>
+        <item name="colorOnSecondary">@color/primaryColor</item>
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="SearchTextViewTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:textColor">@color/colorAccent</item>
+    <style name="BlackCursorSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="colorControlActivated">@color/primaryColor</item>
     </style>
-
-    <style name="expandedTitleText" parent="@android:style/TextAppearance">
-        <item name="android:textSize">26sp</item>
+    <style name="SynonymTextStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">italic</item>
     </style>
-
-    <style name="MyTabText" parent="TextAppearance.AppCompat.Button">
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">16sp</item>
-        <item name="textAllCaps">false</item>
+    <style name="PronunciationTextStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/secondaryColorVariant</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
-
-    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <!--buttons color-->
-        <item name="colorAccent">@color/colorPrimary</item>
+    <style name="DarkFavWordTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/dark_rounded_corner</item>
     </style>
-
+    <style name="LightFavWordTextStyle">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@drawable/rounded_corner</item>
+    </style>
 </resources>
